@@ -13,7 +13,7 @@
         <!--My Miles-->
         <scene sceneID="ZvP-SV-6r6">
             <objects>
-                <tableViewController id="mVR-JL-S4h" customClass="newEntriesTableViewController" customModule="Mileage" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mVR-JL-S4h" customClass="EntriesTableViewController" customModule="Mileage" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eJc-4s-YIL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,7 +110,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Add Entry" id="0mU-1n-jrT">
                             <color key="tintColor" red="0.67517596479999997" green="0.17651334399999999" blue="0.1711528897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="YJm-WH-jce" kind="show" id="BEU-af-8aI"/>
+                                <segue destination="YJm-WH-jce" kind="show" identifier="addNewEntrySegue" id="BEU-af-8aI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -721,6 +721,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NI7-y7-G5c" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D7v-fF-UwH">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

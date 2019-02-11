@@ -22,9 +22,8 @@
 		63D2CD171FDC8F4200EE64BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2CD161FDC8F4200EE64BE /* AppDelegate.swift */; };
 		63D2CD241FDC8F4200EE64BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D2CD221FDC8F4200EE64BE /* LaunchScreen.storyboard */; };
 		63EF3D262211225300DD19E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF3D252211225300DD19E4 /* Main.storyboard */; };
-		63EF3D2822112BEA00DD19E4 /* newEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF3D2722112BEA00DD19E4 /* newEntriesTableViewController.swift */; };
+		63EF3D2822112BEA00DD19E4 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF3D2722112BEA00DD19E4 /* EntriesTableViewController.swift */; };
 		63FBA40F2208FE98000BA8E4 /* EntryDetialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */; };
-		63FEA53B220B653B003A6131 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEA53A220B653B003A6131 /* EntriesTableViewController.swift */; };
 		B5E0B6FB52C5B89CA090CADF /* Pods_Mileage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1875BB2EF3790A4102630BE /* Pods_Mileage.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,9 +66,8 @@
 		63D2CD2A1FDC8F4200EE64BE /* MileageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MileageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D2CD351FDC8F4200EE64BE /* MileageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MileageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EF3D252211225300DD19E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		63EF3D2722112BEA00DD19E4 /* newEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEntriesTableViewController.swift; sourceTree = "<group>"; };
+		63EF3D2722112BEA00DD19E4 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetialTableViewController.swift; sourceTree = "<group>"; };
-		63FEA53A220B653B003A6131 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		E1875BB2EF3790A4102630BE /* Pods_Mileage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,8 +127,7 @@
 		6380BCCE2201F94A00C36D7F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				63EF3D2722112BEA00DD19E4 /* newEntriesTableViewController.swift */,
-				63FEA53A220B653B003A6131 /* EntriesTableViewController.swift */,
+				63EF3D2722112BEA00DD19E4 /* EntriesTableViewController.swift */,
 				63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */,
 				6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */,
 				633B8276220CD7C10076938C /* ChartsViewController.swift */,
@@ -388,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63FEA53B220B653B003A6131 /* EntriesTableViewController.swift in Sources */,
 				6380BCD7220221D700C36D7F /* Image_Alpha-ext.swift in Sources */,
 				6333A1FD220E246200235EEC /* ChartsContentViewController.swift in Sources */,
 				6380BCD92202544300C36D7F /* Destination.swift in Sources */,
@@ -396,7 +392,7 @@
 				6380BCD522021BC100C36D7F /* HideKeyboard+ext.swift in Sources */,
 				63FBA40F2208FE98000BA8E4 /* EntryDetialTableViewController.swift in Sources */,
 				63A22D881FE9FDEF00C131DC /* CustomTableViewCell.swift in Sources */,
-				63EF3D2822112BEA00DD19E4 /* newEntriesTableViewController.swift in Sources */,
+				63EF3D2822112BEA00DD19E4 /* EntriesTableViewController.swift in Sources */,
 				63D2CD171FDC8F4200EE64BE /* AppDelegate.swift in Sources */,
 				63CADE3D1FE38FB600875103 /* MileageEntry.swift in Sources */,
 				633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */,

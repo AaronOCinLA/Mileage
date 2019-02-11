@@ -1,8 +1,8 @@
 //
-//  AllEntriesTableViewController.swift
+//  newEntriesTableViewController.swift
 //  Mileage
 //
-//  Created by Aaron O'Connor on 2/6/19.
+//  Created by Aaron O'Connor on 2/10/19.
 //  Copyright © 2019 Aaron O'Connor. All rights reserved.
 //
 
@@ -19,17 +19,14 @@ class EntriesTableViewController: UITableViewController {
     var entryArray: [MileageEntry] = []  // Remove this
     var cityArray = [String]()
     
-    @IBOutlet var tableview: UITableView!
-    
-    // MARK: - Viewcontroller Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//
-//        cityArray = loadCityArray()
-//        createTestArray()           // TODO: Delete
+        
+        
+        cityArray = loadCityArray()
+        createTestArray()           // TODO: Delete
     }
-    
     
     // MARK: - Functions
     
@@ -80,33 +77,31 @@ class EntriesTableViewController: UITableViewController {
         }
     }
     
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return entryArray.count
     }
     
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "cell2"
+        let cellIdentifier = "entryCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomTableViewCell
         
         // Configure the cell...
-//        cell.lblDate.text = "Date: " + entryArray[indexPath.row].date.dateToString
-//        cell.lblSMileage.text = "Start: " + String(entryArray[indexPath.row].odometer-43)
-//        cell.lblEMileage.text = " End: " + String(entryArray[indexPath.row].odometer)
-//        cell.lblTMileage.text = "Total Miles: 43"
-//        cell.lblDestination.text = "Destination: \(entryArray[indexPath.row].destination)"
-//        cell.lbltSale.text = "$" + entryArray[indexPath.row].totalSale.gasPriceFormat()
-//        cell.lblMpg.text = "$" + entryArray[indexPath.row].pricePerGallon.gasPriceFormat()
+        cell.lblDate.text = "Date: " + entryArray[indexPath.row].date.dateToString
+        cell.lblSMileage.text = "Start: " + String(entryArray[indexPath.row].odometer-43)
+        cell.lblEMileage.text = " End: " + String(entryArray[indexPath.row].odometer)
+        //        cell.lblTMileage.text = "Total Miles: 43"
+        cell.lblDestination.text = "Destination: \(entryArray[indexPath.row].destination)"
+        cell.lbltSale.text = "$" + entryArray[indexPath.row].totalSale.gasPriceFormat()
+        cell.lblMpg.text = "$" + entryArray[indexPath.row].pricePerGallon.gasPriceFormat()
         
         //        cell.imageGas.image = UIImage(named: "gasTank")
         
@@ -114,15 +109,15 @@ class EntriesTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "sendDataToChartsSegue" {
-//            let destinationController = segue.destination as! ChartsViewController
-//            getMileageHistory()
-//            destinationController.data = dataArray
-//        } else if segue.identifier == "addNewEntrySegue" {
-//            let destinationController = segue.destination as! EntryDetialTableViewController
-//            destinationController.hidesBottomBarWhenPushed = true
-//        }
-//        
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendDataToChartsSegue" {
+            let destinationController = segue.destination as! ChartsViewController
+            getMileageHistory()
+            destinationController.data = dataArray
+        } else if segue.identifier == "addNewEntrySegue" {
+            let destinationController = segue.destination as! EntryDetialTableViewController
+            destinationController.hidesBottomBarWhenPushed = true
+        }
+        
+    }
 }
