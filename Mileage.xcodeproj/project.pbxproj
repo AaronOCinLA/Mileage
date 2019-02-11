@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		630188BC1FE8AD8A00B1A9B8 /* AllEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630188BB1FE8AD8A00B1A9B8 /* AllEntriesTableViewController.swift */; };
-		6319BB881FF05BA100EE4224 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6319BB871FF05BA100EE4224 /* UserSettings.swift */; };
-		631E56E31FEC3BA3009F3CEC /* ViewControllerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631E56E21FEC3BA3009F3CEC /* ViewControllerOptions.swift */; };
-		631E56E51FEC3BB5009F3CEC /* ViewControllerCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631E56E41FEC3BB5009F3CEC /* ViewControllerCharts.swift */; };
+		01C1F5008B8014DBA501CEF7 /* Pods_Mileage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C45013F45A3FC08543043 /* Pods_Mileage.framework */; };
+		6333A1FD220E246200235EEC /* ChartsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333A1FC220E246200235EEC /* ChartsContentViewController.swift */; };
+		6333A1FF220E276000235EEC /* ChartsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333A1FE220E276000235EEC /* ChartsPageViewController.swift */; };
 		633A823A201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */; };
-		6380BCD0220216E000C36D7F /* SingleEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCCF220216E000C36D7F /* SingleEntryTableViewController.swift */; };
-		6380BCD322021B5300C36D7F /* Date+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD222021B5300C36D7F /* Date+ext.swift */; };
+		633B8275220BCE460076938C /* EntryHistoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8274220BCE460076938C /* EntryHistoryChartData.swift */; };
+		633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8276220CD7C10076938C /* ChartsViewController.swift */; };
+		636E4734220A23C0002E1717 /* gasPriceFormat+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4733220A23C0002E1717 /* gasPriceFormat+ext.swift */; };
+		6380BCD322021B5300C36D7F /* DateToString+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD222021B5300C36D7F /* DateToString+ext.swift */; };
 		6380BCD522021BC100C36D7F /* HideKeyboard+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD422021BC100C36D7F /* HideKeyboard+ext.swift */; };
 		6380BCD7220221D700C36D7F /* Image_Alpha-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD6220221D700C36D7F /* Image_Alpha-ext.swift */; };
 		6380BCD92202544300C36D7F /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD82202544300C36D7F /* Destination.swift */; };
 		63A22D881FE9FDEF00C131DC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A22D871FE9FDEF00C131DC /* CustomTableViewCell.swift */; };
 		63CADE3D1FE38FB600875103 /* MileageEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CADE3C1FE38FB600875103 /* MileageEntry.swift */; };
 		63D2CD171FDC8F4200EE64BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2CD161FDC8F4200EE64BE /* AppDelegate.swift */; };
-		63D2CD1C1FDC8F4200EE64BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D2CD1A1FDC8F4200EE64BE /* Main.storyboard */; };
 		63D2CD241FDC8F4200EE64BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D2CD221FDC8F4200EE64BE /* LaunchScreen.storyboard */; };
-		63D2CD2F1FDC8F4200EE64BE /* MileageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2CD2E1FDC8F4200EE64BE /* MileageTests.swift */; };
-		63D2CD3A1FDC8F4200EE64BE /* MileageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2CD391FDC8F4200EE64BE /* MileageUITests.swift */; };
+		63EF3D262211225300DD19E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF3D252211225300DD19E4 /* Main.storyboard */; };
+		63EF3D2822112BEA00DD19E4 /* newEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF3D2722112BEA00DD19E4 /* newEntriesTableViewController.swift */; };
+		63FBA40F2208FE98000BA8E4 /* EntryDetialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */; };
+		63FEA53B220B653B003A6131 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEA53A220B653B003A6131 /* EntriesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		630188BB1FE8AD8A00B1A9B8 /* AllEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEntriesTableViewController.swift; sourceTree = "<group>"; };
-		6319BB871FF05BA100EE4224 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		631E56E21FEC3BA3009F3CEC /* ViewControllerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOptions.swift; sourceTree = "<group>"; };
-		631E56E41FEC3BB5009F3CEC /* ViewControllerCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCharts.swift; sourceTree = "<group>"; };
+		265C45013F45A3FC08543043 /* Pods_Mileage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6333A1FC220E246200235EEC /* ChartsContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsContentViewController.swift; sourceTree = "<group>"; };
+		6333A1FE220E276000235EEC /* ChartsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPageViewController.swift; sourceTree = "<group>"; };
 		633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 20-36-01-240 13-22-41-051.xcassets"; sourceTree = "<group>"; };
-		6380BCCF220216E000C36D7F /* SingleEntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEntryTableViewController.swift; sourceTree = "<group>"; };
-		6380BCD222021B5300C36D7F /* Date+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ext.swift"; sourceTree = "<group>"; };
+		633B8274220BCE460076938C /* EntryHistoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryHistoryChartData.swift; sourceTree = "<group>"; };
+		633B8276220CD7C10076938C /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		636E4733220A23C0002E1717 /* gasPriceFormat+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "gasPriceFormat+ext.swift"; sourceTree = "<group>"; };
+		6380BCD222021B5300C36D7F /* DateToString+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateToString+ext.swift"; sourceTree = "<group>"; };
 		6380BCD422021BC100C36D7F /* HideKeyboard+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HideKeyboard+ext.swift"; sourceTree = "<group>"; };
 		6380BCD6220221D700C36D7F /* Image_Alpha-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image_Alpha-ext.swift"; sourceTree = "<group>"; };
 		6380BCD82202544300C36D7F /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
@@ -58,15 +61,16 @@
 		63CADE3C1FE38FB600875103 /* MileageEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageEntry.swift; sourceTree = "<group>"; };
 		63D2CD131FDC8F4200EE64BE /* Mileage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mileage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D2CD161FDC8F4200EE64BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63D2CD1B1FDC8F4200EE64BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63D2CD231FDC8F4200EE64BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63D2CD251FDC8F4200EE64BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D2CD2A1FDC8F4200EE64BE /* MileageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MileageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63D2CD2E1FDC8F4200EE64BE /* MileageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTests.swift; sourceTree = "<group>"; };
-		63D2CD301FDC8F4200EE64BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D2CD351FDC8F4200EE64BE /* MileageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MileageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63D2CD391FDC8F4200EE64BE /* MileageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageUITests.swift; sourceTree = "<group>"; };
-		63D2CD3B1FDC8F4200EE64BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63EF3D252211225300DD19E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		63EF3D2722112BEA00DD19E4 /* newEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEntriesTableViewController.swift; sourceTree = "<group>"; };
+		63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetialTableViewController.swift; sourceTree = "<group>"; };
+		63FEA53A220B653B003A6131 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		A954F97C1DFBC7E746B951DC /* Pods-Mileage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage.debug.xcconfig"; path = "Target Support Files/Pods-Mileage/Pods-Mileage.debug.xcconfig"; sourceTree = "<group>"; };
+		BFA7D177AD5827DB9116696E /* Pods-Mileage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage.release.xcconfig"; path = "Target Support Files/Pods-Mileage/Pods-Mileage.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C1F5008B8014DBA501CEF7 /* Pods_Mileage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +102,9 @@
 		6380BCCB2201F91900C36D7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6319BB871FF05BA100EE4224 /* UserSettings.swift */,
 				63CADE3C1FE38FB600875103 /* MileageEntry.swift */,
 				6380BCD82202544300C36D7F /* Destination.swift */,
+				633B8274220BCE460076938C /* EntryHistoryChartData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,7 +112,7 @@
 		6380BCCC2201F92F00C36D7F /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				63D2CD1A1FDC8F4200EE64BE /* Main.storyboard */,
+				63EF3D252211225300DD19E4 /* Main.storyboard */,
 				63D2CD221FDC8F4200EE64BE /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -124,10 +129,12 @@
 		6380BCCE2201F94A00C36D7F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6380BCCF220216E000C36D7F /* SingleEntryTableViewController.swift */,
-				630188BB1FE8AD8A00B1A9B8 /* AllEntriesTableViewController.swift */,
-				631E56E41FEC3BB5009F3CEC /* ViewControllerCharts.swift */,
-				631E56E21FEC3BA3009F3CEC /* ViewControllerOptions.swift */,
+				63EF3D2722112BEA00DD19E4 /* newEntriesTableViewController.swift */,
+				63FEA53A220B653B003A6131 /* EntriesTableViewController.swift */,
+				63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */,
+				633B8276220CD7C10076938C /* ChartsViewController.swift */,
+				6333A1FE220E276000235EEC /* ChartsPageViewController.swift */,
+				6333A1FC220E246200235EEC /* ChartsContentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -135,7 +142,8 @@
 		6380BCD122021B2C00C36D7F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6380BCD222021B5300C36D7F /* Date+ext.swift */,
+				6380BCD222021B5300C36D7F /* DateToString+ext.swift */,
+				636E4733220A23C0002E1717 /* gasPriceFormat+ext.swift */,
 				6380BCD422021BC100C36D7F /* HideKeyboard+ext.swift */,
 				6380BCD6220221D700C36D7F /* Image_Alpha-ext.swift */,
 			);
@@ -146,9 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				63D2CD151FDC8F4200EE64BE /* Mileage */,
-				63D2CD2D1FDC8F4200EE64BE /* MileageTests */,
-				63D2CD381FDC8F4200EE64BE /* MileageUITests */,
 				63D2CD141FDC8F4200EE64BE /* Products */,
+				F70DDC83D2FF5BAE0840F479 /* Pods */,
+				77FAD8DF8B6BC06A2E87E842 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,9 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				6380BCD122021B2C00C36D7F /* Extensions */,
-				6380BCCD2201F93E00C36D7F /* View */,
 				6380BCCC2201F92F00C36D7F /* Storyboard */,
 				6380BCCB2201F91900C36D7F /* Model */,
+				6380BCCD2201F93E00C36D7F /* View */,
 				6380BCCE2201F94A00C36D7F /* Controller */,
 				63D2CD161FDC8F4200EE64BE /* AppDelegate.swift */,
 				63D2CD251FDC8F4200EE64BE /* Info.plist */,
@@ -177,22 +185,21 @@
 			path = Mileage;
 			sourceTree = "<group>";
 		};
-		63D2CD2D1FDC8F4200EE64BE /* MileageTests */ = {
+		77FAD8DF8B6BC06A2E87E842 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				63D2CD2E1FDC8F4200EE64BE /* MileageTests.swift */,
-				63D2CD301FDC8F4200EE64BE /* Info.plist */,
+				265C45013F45A3FC08543043 /* Pods_Mileage.framework */,
 			);
-			path = MileageTests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		63D2CD381FDC8F4200EE64BE /* MileageUITests */ = {
+		F70DDC83D2FF5BAE0840F479 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				63D2CD391FDC8F4200EE64BE /* MileageUITests.swift */,
-				63D2CD3B1FDC8F4200EE64BE /* Info.plist */,
+				A954F97C1DFBC7E746B951DC /* Pods-Mileage.debug.xcconfig */,
+				BFA7D177AD5827DB9116696E /* Pods-Mileage.release.xcconfig */,
 			);
-			path = MileageUITests;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63D2CD3E1FDC8F4200EE64BE /* Build configuration list for PBXNativeTarget "Mileage" */;
 			buildPhases = (
+				A3C2228C3F1716445D0708FB /* [CP] Check Pods Manifest.lock */,
 				63D2CD0F1FDC8F4100EE64BE /* Sources */,
 				63D2CD101FDC8F4100EE64BE /* Frameworks */,
 				63D2CD111FDC8F4100EE64BE /* Resources */,
+				B2A6CF60AB7C041D95F70B65 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,7 +316,7 @@
 			files = (
 				633A823A201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets in Resources */,
 				63D2CD241FDC8F4200EE64BE /* LaunchScreen.storyboard in Resources */,
-				63D2CD1C1FDC8F4200EE64BE /* Main.storyboard in Resources */,
+				63EF3D262211225300DD19E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,23 +336,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A3C2228C3F1716445D0708FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mileage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2A6CF60AB7C041D95F70B65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mileage/Pods-Mileage-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mileage/Pods-Mileage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63D2CD0F1FDC8F4100EE64BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6380BCD0220216E000C36D7F /* SingleEntryTableViewController.swift in Sources */,
+				63FEA53B220B653B003A6131 /* EntriesTableViewController.swift in Sources */,
 				6380BCD7220221D700C36D7F /* Image_Alpha-ext.swift in Sources */,
+				6333A1FD220E246200235EEC /* ChartsContentViewController.swift in Sources */,
 				6380BCD92202544300C36D7F /* Destination.swift in Sources */,
-				631E56E51FEC3BB5009F3CEC /* ViewControllerCharts.swift in Sources */,
-				631E56E31FEC3BA3009F3CEC /* ViewControllerOptions.swift in Sources */,
+				6333A1FF220E276000235EEC /* ChartsPageViewController.swift in Sources */,
+				633B8275220BCE460076938C /* EntryHistoryChartData.swift in Sources */,
 				6380BCD522021BC100C36D7F /* HideKeyboard+ext.swift in Sources */,
-				6319BB881FF05BA100EE4224 /* UserSettings.swift in Sources */,
+				63FBA40F2208FE98000BA8E4 /* EntryDetialTableViewController.swift in Sources */,
 				63A22D881FE9FDEF00C131DC /* CustomTableViewCell.swift in Sources */,
+				63EF3D2822112BEA00DD19E4 /* newEntriesTableViewController.swift in Sources */,
 				63D2CD171FDC8F4200EE64BE /* AppDelegate.swift in Sources */,
-				630188BC1FE8AD8A00B1A9B8 /* AllEntriesTableViewController.swift in Sources */,
 				63CADE3D1FE38FB600875103 /* MileageEntry.swift in Sources */,
-				6380BCD322021B5300C36D7F /* Date+ext.swift in Sources */,
+				633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */,
+				636E4734220A23C0002E1717 /* gasPriceFormat+ext.swift in Sources */,
+				6380BCD322021B5300C36D7F /* DateToString+ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +410,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63D2CD2F1FDC8F4200EE64BE /* MileageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +417,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63D2CD3A1FDC8F4200EE64BE /* MileageUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,14 +436,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		63D2CD1A1FDC8F4200EE64BE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63D2CD1B1FDC8F4200EE64BE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		63D2CD221FDC8F4200EE64BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -511,38 +560,40 @@
 		};
 		63D2CD3F1FDC8F4200EE64BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A954F97C1DFBC7E746B951DC /* Pods-Mileage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUCT5BGGNK;
 				INFOPLIST_FILE = Mileage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oconnor.aaron.Mileage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		63D2CD401FDC8F4200EE64BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFA7D177AD5827DB9116696E /* Pods-Mileage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUCT5BGGNK;
 				INFOPLIST_FILE = Mileage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oconnor.aaron.Mileage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
