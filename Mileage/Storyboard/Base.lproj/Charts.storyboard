@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x8n-vV-q7S">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Report History-->
+        <scene sceneID="k6r-yJ-MNg">
+            <objects>
+                <viewController title="Report History" id="tZ9-s3-JUj" customClass="ChartsViewController" customModule="Mileage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RzV-iZ-dkP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="spi-bi-vcj">
+                                <rect key="frame" x="8" y="76" width="359" height="281"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="281" id="vY3-Ix-w0Y"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8W-fA-idD" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="362" width="359" height="241"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35686274509999999" green="0.70980392160000005" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="spi-bi-vcj" firstAttribute="top" secondItem="n55-6g-O0N" secondAttribute="top" constant="12" id="A98-c6-Jwh"/>
+                            <constraint firstItem="n55-6g-O0N" firstAttribute="trailing" secondItem="spi-bi-vcj" secondAttribute="trailing" constant="8" id="Irl-Ba-k0l"/>
+                            <constraint firstItem="P8W-fA-idD" firstAttribute="leading" secondItem="n55-6g-O0N" secondAttribute="leading" constant="8" id="KuW-gT-Jah"/>
+                            <constraint firstItem="n55-6g-O0N" firstAttribute="bottom" secondItem="P8W-fA-idD" secondAttribute="bottom" constant="15" id="P2F-Pd-SGq"/>
+                            <constraint firstItem="P8W-fA-idD" firstAttribute="top" secondItem="spi-bi-vcj" secondAttribute="bottom" constant="5" id="PQu-JK-pub"/>
+                            <constraint firstItem="n55-6g-O0N" firstAttribute="trailing" secondItem="P8W-fA-idD" secondAttribute="trailing" constant="8" id="Qbr-1l-tcO"/>
+                            <constraint firstItem="spi-bi-vcj" firstAttribute="leading" secondItem="n55-6g-O0N" secondAttribute="leading" constant="8" id="lUa-2h-YCF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n55-6g-O0N"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n1R-vH-gKw"/>
+                    <connections>
+                        <outlet property="barChart" destination="P8W-fA-idD" id="VpR-PQ-efn"/>
+                        <outlet property="testTextView" destination="spi-bi-vcj" id="JP3-rA-7Mg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUg-6Q-s1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6439.1999999999998" y="-1020.5397301349326"/>
+        </scene>
+        <!--Last Trip & MPG-->
+        <scene sceneID="Qgx-sB-1NZ">
+            <objects>
+                <viewController id="25U-Ll-snD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3r2-BA-vwf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-xN-voN" userLabel="viewTrip">
+                                <rect key="frame" x="0.0" y="-158" width="375" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.94999998807907104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="woodSign-1" translatesAutoresizingMaskIntoConstraints="NO" id="1ld-Yg-3dh">
+                                        <rect key="frame" x="16" y="1" width="343" height="233"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Trip" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fB8-Nf-W1v">
+                                        <rect key="frame" x="56" y="126" width="257" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="26"/>
+                                        <color key="textColor" red="1" green="0.73640641090000003" blue="0.16707080830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="way o'er yonder to San Bernardino" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmU-I9-KZJ">
+                                        <rect key="frame" x="49" y="191" width="264" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="18"/>
+                                        <color key="textColor" red="1" green="0.73640641090000003" blue="0.16707080830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tanks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2A9-ah-D6I">
+                                        <rect key="frame" x="39" y="-14" width="62" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="22"/>
+                                        <color key="textColor" red="1" green="0.73640641090000003" blue="0.16707080830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="for the " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYy-zj-dsf">
+                                        <rect key="frame" x="156" y="-8" width="63" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="22"/>
+                                        <color key="textColor" red="1" green="0.73640641090000003" blue="0.16707080830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Memories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSb-d7-uiD">
+                                        <rect key="frame" x="264" y="-14" width="89" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="22"/>
+                                        <color key="textColor" red="1" green="0.73640641090000003" blue="0.16707080830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.32292578280000001" green="0.36252361150000001" blue="0.79678064609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vs-rN-Fh6" userLabel="viewSpent">
+                                <rect key="frame" x="-375" y="354" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointedSignRight" translatesAutoresizingMaskIntoConstraints="NO" id="2wK-3g-V3I">
+                                        <rect key="frame" x="-9" y="14" width="351" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Spent This Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpR-VM-Fg4">
+                                        <rect key="frame" x="3" y="28" width="218" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="22"/>
+                                        <color key="textColor" red="1" green="0.73640641090000003" blue="0.16707080830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$300.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRP-ef-vzO">
+                                        <rect key="frame" x="229" y="24" width="94" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="26"/>
+                                        <color key="textColor" red="1" green="0.73640641090000003" blue="0.16707080830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.32292578280000001" green="0.36252361150000001" blue="0.79678064609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mb6-XI-Z2x" userLabel="viewMiles">
+                                <rect key="frame" x="375" y="519" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointedSignLeft" translatesAutoresizingMaskIntoConstraints="NO" id="icY-sc-CLP">
+                                        <rect key="frame" x="50" y="8" width="333" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aE-fW-bAa">
+                                        <rect key="frame" x="273" y="29" width="84" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="32"/>
+                                        <color key="textColor" red="1" green="0.73640641090000003" blue="0.16707080830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Miles This Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DY1-N1-GpQ">
+                                        <rect key="frame" x="50" y="28" width="220" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="22"/>
+                                        <color key="textColor" red="1" green="0.73640641090000003" blue="0.16707080830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.32292578280000001" green="0.36252361150000001" blue="0.79678064609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32292578280000001" green="0.36252361150000001" blue="0.79678064609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="OXC-Ao-W5D"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Last Trip &amp; MPG" id="tdy-Sc-dzO"/>
+                    <connections>
+                        <outlet property="lblDest" destination="gmU-I9-KZJ" id="q9n-BG-R41"/>
+                        <outlet property="lblLastTrip" destination="fB8-Nf-W1v" id="WOn-bj-Bci"/>
+                        <outlet property="lblTlMiles" destination="3aE-fW-bAa" id="KV4-1D-OKH"/>
+                        <outlet property="lblTlSpent" destination="aRP-ef-vzO" id="YNb-gD-YQk"/>
+                        <outlet property="viewMiles" destination="mb6-XI-Z2x" id="ICs-8d-o5X"/>
+                        <outlet property="viewSpent" destination="6vs-rN-Fh6" id="rXF-Vk-vbL"/>
+                        <outlet property="viewTrip" destination="PYU-xN-voN" id="2yO-u6-NwY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9c2-xn-v9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7352.8000000000002" y="-1019.640179910045"/>
+        </scene>
+        <!--Charts-->
+        <scene sceneID="Xwr-za-Vqy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x8n-vV-q7S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Charts" id="QCX-FA-XkV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q6a-hb-YcE">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tZ9-s3-JUj" kind="relationship" relationship="rootViewController" id="0FA-Bm-KoN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmn-ue-YTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5500" y="-1020.5397301349326"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pointedSignLeft" width="573" height="138"/>
+        <image name="pointedSignRight" width="566" height="133"/>
+        <image name="woodSign-1" width="191.52000427246094" height="85.44000244140625"/>
+    </resources>
+</document>

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01C1F5008B8014DBA501CEF7 /* Pods_Mileage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C45013F45A3FC08543043 /* Pods_Mileage.framework */; };
+		6320C22B22113CA800C784E0 /* ChartsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */; };
 		6333A1FD220E246200235EEC /* ChartsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333A1FC220E246200235EEC /* ChartsContentViewController.swift */; };
-		6333A1FF220E276000235EEC /* ChartsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333A1FE220E276000235EEC /* ChartsPageViewController.swift */; };
 		633A823A201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */; };
 		633B8275220BCE460076938C /* EntryHistoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8274220BCE460076938C /* EntryHistoryChartData.swift */; };
 		633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8276220CD7C10076938C /* ChartsViewController.swift */; };
@@ -26,6 +25,7 @@
 		63EF3D2822112BEA00DD19E4 /* newEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF3D2722112BEA00DD19E4 /* newEntriesTableViewController.swift */; };
 		63FBA40F2208FE98000BA8E4 /* EntryDetialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */; };
 		63FEA53B220B653B003A6131 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEA53A220B653B003A6131 /* EntriesTableViewController.swift */; };
+		B5E0B6FB52C5B89CA090CADF /* Pods_Mileage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1875BB2EF3790A4102630BE /* Pods_Mileage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		265C45013F45A3FC08543043 /* Pods_Mileage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0027D18F6D717ED8BE1D5447 /* Pods-Mileage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage.release.xcconfig"; path = "Target Support Files/Pods-Mileage/Pods-Mileage.release.xcconfig"; sourceTree = "<group>"; };
+		52FD72FD663891C7F36C85A6 /* Pods-Mileage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage.debug.xcconfig"; path = "Target Support Files/Pods-Mileage/Pods-Mileage.debug.xcconfig"; sourceTree = "<group>"; };
+		6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPageViewController.swift; sourceTree = "<group>"; };
 		6333A1FC220E246200235EEC /* ChartsContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsContentViewController.swift; sourceTree = "<group>"; };
-		6333A1FE220E276000235EEC /* ChartsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPageViewController.swift; sourceTree = "<group>"; };
 		633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 20-36-01-240 13-22-41-051.xcassets"; sourceTree = "<group>"; };
 		633B8274220BCE460076938C /* EntryHistoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryHistoryChartData.swift; sourceTree = "<group>"; };
 		633B8276220CD7C10076938C /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
@@ -69,8 +70,7 @@
 		63EF3D2722112BEA00DD19E4 /* newEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEntriesTableViewController.swift; sourceTree = "<group>"; };
 		63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetialTableViewController.swift; sourceTree = "<group>"; };
 		63FEA53A220B653B003A6131 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
-		A954F97C1DFBC7E746B951DC /* Pods-Mileage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage.debug.xcconfig"; path = "Target Support Files/Pods-Mileage/Pods-Mileage.debug.xcconfig"; sourceTree = "<group>"; };
-		BFA7D177AD5827DB9116696E /* Pods-Mileage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage.release.xcconfig"; path = "Target Support Files/Pods-Mileage/Pods-Mileage.release.xcconfig"; sourceTree = "<group>"; };
+		E1875BB2EF3790A4102630BE /* Pods_Mileage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01C1F5008B8014DBA501CEF7 /* Pods_Mileage.framework in Frameworks */,
+				B5E0B6FB52C5B89CA090CADF /* Pods_Mileage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +132,8 @@
 				63EF3D2722112BEA00DD19E4 /* newEntriesTableViewController.swift */,
 				63FEA53A220B653B003A6131 /* EntriesTableViewController.swift */,
 				63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */,
+				6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */,
 				633B8276220CD7C10076938C /* ChartsViewController.swift */,
-				6333A1FE220E276000235EEC /* ChartsPageViewController.swift */,
 				6333A1FC220E246200235EEC /* ChartsContentViewController.swift */,
 			);
 			path = Controller;
@@ -155,8 +155,8 @@
 			children = (
 				63D2CD151FDC8F4200EE64BE /* Mileage */,
 				63D2CD141FDC8F4200EE64BE /* Products */,
-				F70DDC83D2FF5BAE0840F479 /* Pods */,
-				77FAD8DF8B6BC06A2E87E842 /* Frameworks */,
+				902C2145287907F2DBA20F09 /* Pods */,
+				86892977A9F95873718F66F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,19 +185,19 @@
 			path = Mileage;
 			sourceTree = "<group>";
 		};
-		77FAD8DF8B6BC06A2E87E842 /* Frameworks */ = {
+		86892977A9F95873718F66F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				265C45013F45A3FC08543043 /* Pods_Mileage.framework */,
+				E1875BB2EF3790A4102630BE /* Pods_Mileage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F70DDC83D2FF5BAE0840F479 /* Pods */ = {
+		902C2145287907F2DBA20F09 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A954F97C1DFBC7E746B951DC /* Pods-Mileage.debug.xcconfig */,
-				BFA7D177AD5827DB9116696E /* Pods-Mileage.release.xcconfig */,
+				52FD72FD663891C7F36C85A6 /* Pods-Mileage.debug.xcconfig */,
+				0027D18F6D717ED8BE1D5447 /* Pods-Mileage.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -392,7 +392,6 @@
 				6380BCD7220221D700C36D7F /* Image_Alpha-ext.swift in Sources */,
 				6333A1FD220E246200235EEC /* ChartsContentViewController.swift in Sources */,
 				6380BCD92202544300C36D7F /* Destination.swift in Sources */,
-				6333A1FF220E276000235EEC /* ChartsPageViewController.swift in Sources */,
 				633B8275220BCE460076938C /* EntryHistoryChartData.swift in Sources */,
 				6380BCD522021BC100C36D7F /* HideKeyboard+ext.swift in Sources */,
 				63FBA40F2208FE98000BA8E4 /* EntryDetialTableViewController.swift in Sources */,
@@ -401,6 +400,7 @@
 				63D2CD171FDC8F4200EE64BE /* AppDelegate.swift in Sources */,
 				63CADE3D1FE38FB600875103 /* MileageEntry.swift in Sources */,
 				633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */,
+				6320C22B22113CA800C784E0 /* ChartsPageViewController.swift in Sources */,
 				636E4734220A23C0002E1717 /* gasPriceFormat+ext.swift in Sources */,
 				6380BCD322021B5300C36D7F /* DateToString+ext.swift in Sources */,
 			);
@@ -560,7 +560,7 @@
 		};
 		63D2CD3F1FDC8F4200EE64BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A954F97C1DFBC7E746B951DC /* Pods-Mileage.debug.xcconfig */;
+			baseConfigurationReference = 52FD72FD663891C7F36C85A6 /* Pods-Mileage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -579,7 +579,7 @@
 		};
 		63D2CD401FDC8F4200EE64BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFA7D177AD5827DB9116696E /* Pods-Mileage.release.xcconfig */;
+			baseConfigurationReference = 0027D18F6D717ED8BE1D5447 /* Pods-Mileage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
