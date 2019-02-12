@@ -106,6 +106,12 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userDefault.set(24601, forKey: "odometer")
+        
+        if let lastOdometerEntry = userDefault.value(forKey: "odometer") {
+            odometerTextField.text = lastOdometerEntry as? String
+        }
+        
         
         cityArray = loadCityArray()
         
@@ -143,6 +149,8 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         if let cellSection = sectionName(rawValue: section) {
             switch cellSection {
             case .gas:
+                return 2
+            case .entryPreview:
                 return 2
             default:
                 return 1

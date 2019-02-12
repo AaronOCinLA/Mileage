@@ -8,22 +8,22 @@
 
 import UIKit
 import Charts
+import CoreData
 
-class ChartsContentViewController: UIViewController {
+class ChartsContentViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
+    let userDefault = UserDefaults.standard
+    var fetchResultController: NSFetchedResultsController<MileageEntryMO>!
     
-    let maxMonths = 6
-    var data = [EntryHistoryChartData]()
-    var max: Int = 0
-    let citiesArray = ["Destination", "Las Vegas", "North Hills", "Redlands", "San Bernardino", "San Diego", "29 Palms", "Crazy"]
-    var entry = MileageEntry()
-    var entryArray: [MileageEntry] = []
+    var entry: MileageEntryMO!
+    var entries: [MileageEntryMO] = []
     var months = [String]()
     var numMiles = [Int]()
+    
+    var data: [EntryHistoryChartData] = []
     var dataEntries: [BarChartDataEntry] = []
+    let maxMonths = 6
     
-    
-
     @IBOutlet var barChart: BarChartView!
     
     @IBOutlet var chartTitleLable: UILabel! {
@@ -35,24 +35,21 @@ class ChartsContentViewController: UIViewController {
     @IBOutlet var contentUIView: UIView!
     
     var index = 0
-    var chartTitle = ""
+    var chartTitle = "Monthly Miles Summary"
+    
+    // MARK: - View Controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         chartTitleLable.text = chartTitle
         
-        
-        for i in 0...max {
-            let tlGas = data[i].totalGas!.gasPriceFormat()
-            let tlMiles = data[i].getTotalMilesForMonth()
-            let destArr = data[i].getDestinationVisitCount()
-            numMiles.append(tlMiles)
-        }
-        
-        createTestArray()
+        fetchData()
         getMileageHistory()
-        max = data.count - 1
+        
+        createDataArray()
+        
+        getMileageHistory()
         loadMonthArray()
         
         
@@ -61,20 +58,46 @@ class ChartsContentViewController: UIViewController {
         setChart()
     }
     
-    // TODO: Remove this
-    func createTestArray() {
+    @IBAction func didTapNext(sender: UIButton) {
+        print("next chart ... ")
+    }
+    
+    // Fetch data from data store
+    func fetchData() {
         
-        let max = 60
-        for i in 1...max {
-            var testDate = Date()
-            let testOdometer = 24601
-            testDate = testDate.addingTimeInterval(Double(-i*3)*60*60*24)
-            entryArray.append(MileageEntry(date: testDate, odometer: (testOdometer - i*43), totalSale: 21.32, pricePerGallon: 3.749, destination: citiesArray[i%citiesArray.count]))
+        let fetchRequest: NSFetchRequest<MileageEntryMO> = MileageEntryMO.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            
+            do {
+                try fetchResultController.performFetch()
+                if let fetchedObjects = fetchResultController.fetchedObjects {
+                    entries = fetchedObjects
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func createDataArray() {
+        
+        for i in 0...data.count - 1 {
+            
+            let tlGas = data[i].totalGas!.gasPriceFormat()
+            let tlMiles = data[i].getTotalMilesForMonth()
+            let destArr = data[i].getDestinationVisitCount()
+            numMiles.append(tlMiles)
         }
     }
     
     func loadMonthArray() {
-        for i in -max...0 {
+        for i in -data.count + 1 ... 0 {
             months.append(Date().getMonthShortString(x: i))
         }
     }
@@ -82,32 +105,17 @@ class ChartsContentViewController: UIViewController {
     func setChart() {
         
         numMiles = numMiles.reversed()
-        for i in 0...max {
+        for i in 0...data.count - 1 {
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(numMiles[i]))
             dataEntries.append(dataEntry)
         }
         
-        func getMileageHistory() {
-            data.removeAll()
-            for _ in 0...maxMonths {
-                data.append(EntryHistoryChartData())
-            }
-            
-            for i in 0...entryArray.count - 1 {
-                let c = entryArray[i].date.getDifferenceOfMonths() //
-                data[c].odometerEntries.append(entryArray[i].odometer)
-                if let daTotalGas = data[c].totalGas {
-                    data[c].totalGas = daTotalGas + entryArray[i].totalSale
-                }
-                if (entryArray[i].destination != "") {
-                    data[c].destinationArray?.append(entryArray[i].destination)
-                }
-            }
-        }
+        
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Months")
         let chartData = BarChartData(dataSet: chartDataSet)
         
+        barChart.backgroundColor = .white
         barChart.xAxis.labelPosition = .bottom
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
         barChart.data = chartData
@@ -115,19 +123,20 @@ class ChartsContentViewController: UIViewController {
     
     
     func getMileageHistory() {
+        
         data.removeAll()
         for _ in 0...maxMonths {
             data.append(EntryHistoryChartData())
         }
         
-        for i in 0...entryArray.count - 1 {
-            let c = entryArray[i].date.getDifferenceOfMonths() //
-            data[c].odometerEntries.append(entryArray[i].odometer)
+        for i in 0...entries.count - 1 {
+            let c = entries[i].date!.getDifferenceOfMonths() //
+            data[c].odometerEntries.append(Int(entries[i].odometer))
             if let daTotalGas = data[c].totalGas {
-                data[c].totalGas = daTotalGas + entryArray[i].totalSale
+                data[c].totalGas = daTotalGas + entries[i].totalSale
             }
-            if (entryArray[i].destination != "") {
-                data[c].destinationArray?.append(entryArray[i].destination)
+            if (entries[i].destination != "") {
+                data[c].destinationArray?.append(entries[i].destination!)
             }
         }
     }

@@ -12,6 +12,7 @@
 		633A823A201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */; };
 		633B8275220BCE460076938C /* EntryHistoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8274220BCE460076938C /* EntryHistoryChartData.swift */; };
 		633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8276220CD7C10076938C /* ChartsViewController.swift */; };
+		634A8F05221236B60034E45F /* Mileage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 634A8F03221236B60034E45F /* Mileage.xcdatamodeld */; };
 		636E4734220A23C0002E1717 /* gasPriceFormat+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4733220A23C0002E1717 /* gasPriceFormat+ext.swift */; };
 		6380BCD322021B5300C36D7F /* DateToString+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD222021B5300C36D7F /* DateToString+ext.swift */; };
 		6380BCD522021BC100C36D7F /* HideKeyboard+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD422021BC100C36D7F /* HideKeyboard+ext.swift */; };
@@ -52,6 +53,7 @@
 		633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 20-36-01-240 13-22-41-051.xcassets"; sourceTree = "<group>"; };
 		633B8274220BCE460076938C /* EntryHistoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryHistoryChartData.swift; sourceTree = "<group>"; };
 		633B8276220CD7C10076938C /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		634A8F04221236B60034E45F /* Mileage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mileage.xcdatamodel; sourceTree = "<group>"; };
 		636E4733220A23C0002E1717 /* gasPriceFormat+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "gasPriceFormat+ext.swift"; sourceTree = "<group>"; };
 		6380BCD222021B5300C36D7F /* DateToString+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateToString+ext.swift"; sourceTree = "<group>"; };
 		6380BCD422021BC100C36D7F /* HideKeyboard+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HideKeyboard+ext.swift"; sourceTree = "<group>"; };
@@ -127,11 +129,11 @@
 		6380BCCE2201F94A00C36D7F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6333A1FC220E246200235EEC /* ChartsContentViewController.swift */,
 				63EF3D2722112BEA00DD19E4 /* EntriesTableViewController.swift */,
 				63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */,
 				6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */,
 				633B8276220CD7C10076938C /* ChartsViewController.swift */,
-				6333A1FC220E246200235EEC /* ChartsContentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +178,7 @@
 				6380BCCD2201F93E00C36D7F /* View */,
 				6380BCCE2201F94A00C36D7F /* Controller */,
 				63D2CD161FDC8F4200EE64BE /* AppDelegate.swift */,
+				634A8F03221236B60034E45F /* Mileage.xcdatamodeld */,
 				63D2CD251FDC8F4200EE64BE /* Info.plist */,
 				633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */,
 			);
@@ -392,6 +395,7 @@
 				6380BCD522021BC100C36D7F /* HideKeyboard+ext.swift in Sources */,
 				63FBA40F2208FE98000BA8E4 /* EntryDetialTableViewController.swift in Sources */,
 				63A22D881FE9FDEF00C131DC /* CustomTableViewCell.swift in Sources */,
+				634A8F05221236B60034E45F /* Mileage.xcdatamodeld in Sources */,
 				63EF3D2822112BEA00DD19E4 /* EntriesTableViewController.swift in Sources */,
 				63D2CD171FDC8F4200EE64BE /* AppDelegate.swift in Sources */,
 				63CADE3D1FE38FB600875103 /* MileageEntry.swift in Sources */,
@@ -695,6 +699,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		634A8F03221236B60034E45F /* Mileage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				634A8F04221236B60034E45F /* Mileage.xcdatamodel */,
+			);
+			currentVersion = 634A8F04221236B60034E45F /* Mileage.xcdatamodel */;
+			path = Mileage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 63D2CD0B1FDC8F4100EE64BE /* Project object */;
 }
