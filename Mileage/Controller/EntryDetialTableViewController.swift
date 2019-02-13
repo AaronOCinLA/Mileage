@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     
     
     let userDefault = UserDefaults.standard
+    var entry: MileageEntryMO!
+    var selectedGasPrice = 0.0
+    var selectedDestination = ""
     
     
     var cityArray = [String]()
     
-    var lastEnteredGasPrice = 3.749
+    var lastEnteredGasPrice = 0.0
     var gasPriceArray = [Double]()
-    var selectedGasPrice = 0.0
     
     enum sectionName: Int {
         case date, gas, odometer, destination, entryPreview
@@ -32,8 +35,6 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     var today = Date()
     var newDate = Date()
     var lastOdomterEntry = 30127
-    
-    var entry = MileageEntry()
     
     @IBOutlet weak var dateStepper: UIStepper!
     @IBOutlet weak var dateLabel: UILabel!
@@ -64,25 +65,17 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         newDate = today.addingTimeInterval(dateStepper.value * secondsPerDay)
         updateLabels()
     }
-    
-    @IBAction func clickSubmit(_ sender: Any) {
-        let newEntry = MileageEntry.init(date: newDate, odometer: Int(odometerTextField.text!)!, totalSale: Double(totalSaleTextField.text!)!, pricePerGallon: selectedGasPrice, destination: previewDestinationLabel.text!)
-        
-        entry = newEntry
-    }
-    
-    func printEntry (entry: MileageEntry) {
-        print("\nDate: " + entry.date.dateToString)
-        print("Odometer: " + String(entry.odometer))
-        print("Destination: " + entry.destination)
-    }
+
     
     
     @IBAction func updateOdometer(_ sender: Any) {
         
-        if odometerTextField.text != "" {
-            lastOdomterEntry = Int(odometerTextField.text!)!
-            startMilesLabel.text = String(lastOdomterEntry)
+
+        // Check if valid
+        if let odometer = odometerTextField.text {
+            if (Int(odometer)! < lastOdomterEntry) {
+                print("Error: odometer entry must be greater than \(lastOdomterEntry)")
+            }
         }
     }
     
@@ -108,12 +101,18 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         
         userDefault.set(24601, forKey: "odometer")
         
+        
         if let lastOdometerEntry = userDefault.value(forKey: "odometer") {
             odometerTextField.text = lastOdometerEntry as? String
         }
-        
-        
+            
+        // Load cached gas price
         cityArray = loadCityArray()
+        if let cachedGasPrice = userDefault.value(forKey: "lastGasPrice") {
+            lastEnteredGasPrice = cachedGasPrice as? Double ?? 3.749
+        } else {
+            lastEnteredGasPrice = 3.749
+        }
         
         // Create gas price array
         for i in -50...50 {
@@ -188,8 +187,10 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         if let pickerViewSelection = uiPicker(rawValue: pickerView.tag) {
             switch pickerViewSelection {
             case .destination:
+//                entry.destination = cityArray[row]
                 return cityArray[row]
             case .gallonPrice:
+//                entry.pricePerGallon = Double(gasPriceArray[row].gasPriceFormat())!
                 return String(gasPriceArray[row].gasPriceFormat())
             }
         } else {
@@ -202,7 +203,7 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         if let pickerViewSelection  = uiPicker(rawValue: pickerView.tag) {
             switch pickerViewSelection {
             case .destination:
-                previewDestinationLabel.text = cityArray[row]
+                selectedDestination = cityArray[row]
             case .gallonPrice:
                 selectedGasPrice = gasPriceArray[row]
                 previewPricePerGallon.text = "$" + String(gasPriceArray[row].gasPriceFormat())
@@ -210,16 +211,30 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         }
     }
     
-    // MARK: - Navigations
+    // MARK: - Navigations/Submit New Entry
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "submitToAllEntriesSegue" {
-            let destinationController = segue.destination as! EntriesTableViewController
-            destinationController.entry = entry
+    @IBAction func clickSubmit(_ sender: Any) {
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            entry = MileageEntryMO(context: appDelegate.persistentContainer.viewContext)
+            entry.date = Date()
+            entry.pricePerGallon = selectedGasPrice
+            if let amount = totalSaleTextField.text {
+                entry.totalSale = Double(amount)!
+            }
+            if let odmeterReading = odometerTextField.text {
+                entry.odometer = Int16(odmeterReading)!
+                userDefault.set(entry.pricePerGallon, forKey: "lastGasPrice")
+            }
+            entry.destination = selectedDestination
+            
+            
+            appDelegate.saveContext()
         }
+        
+        
+        dismiss(animated: true, completion: nil)
     }
+   
     
-    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-        print("Unwinding ... ")
-    }
 }

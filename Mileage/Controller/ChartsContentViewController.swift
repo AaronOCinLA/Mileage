@@ -12,13 +12,20 @@ import CoreData
 
 class ChartsContentViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
+    enum reportType: Int {
+        case miles, gasSpent, destinationCount
+    }
+    var index = 0
+    
     let userDefault = UserDefaults.standard
     var fetchResultController: NSFetchedResultsController<MileageEntryMO>!
     
     var entry: MileageEntryMO!
     var entries: [MileageEntryMO] = []
     var months = [String]()
+    
     var numMiles = [Int]()
+    var monthlyTotalGasSpent = [Double]()
     
     var data: [EntryHistoryChartData] = []
     var dataEntries: [BarChartDataEntry] = []
@@ -34,21 +41,14 @@ class ChartsContentViewController: UIViewController, NSFetchedResultsControllerD
     
     @IBOutlet var contentUIView: UIView!
     
-    var index = 0
-    var chartTitle = "Monthly Miles Summary"
-    
     // MARK: - View Controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chartTitleLable.text = chartTitle
-        
         fetchData()
         getMileageHistory()
-        
         createDataArray()
-        
         getMileageHistory()
         loadMonthArray()
         
@@ -59,7 +59,10 @@ class ChartsContentViewController: UIViewController, NSFetchedResultsControllerD
     }
     
     @IBAction func didTapNext(sender: UIButton) {
-        print("next chart ... ")
+
+        index = (index + 1)%3
+        setChart()
+        self.viewDidLoad()
     }
     
     // Fetch data from data store
@@ -89,7 +92,9 @@ class ChartsContentViewController: UIViewController, NSFetchedResultsControllerD
         
         for i in 0...data.count - 1 {
             
-            let tlGas = data[i].totalGas!.gasPriceFormat()
+            if let tlGas = Double(data[i].totalGas!.gasPriceFormat()) {
+                monthlyTotalGasSpent.append(tlGas)
+            }
             let tlMiles = data[i].getTotalMilesForMonth()
             let destArr = data[i].getDestinationVisitCount()
             numMiles.append(tlMiles)
@@ -104,21 +109,51 @@ class ChartsContentViewController: UIViewController, NSFetchedResultsControllerD
     
     func setChart() {
         
-        numMiles = numMiles.reversed()
-        for i in 0...data.count - 1 {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(numMiles[i]))
-            dataEntries.append(dataEntry)
+        if let reportSelection = reportType(rawValue: index) {
+            switch reportSelection {
+            case .miles:
+                
+                chartTitleLable.text = "Monthly Miles Report"
+                numMiles = numMiles.reversed()
+                for i in 0...data.count - 1 {
+                    let dataEntry = BarChartDataEntry(x: Double(i), y: Double(numMiles[i]))
+                    dataEntries.append(dataEntry)
+                }
+                let chartDataSet = BarChartDataSet(values: dataEntries, label: "Months")
+                let chartData = BarChartData(dataSet: chartDataSet)
+                
+                barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
+                barChart.data = chartData
+                
+            case .gasSpent:
+                
+                dataEntries.removeAll()
+                
+                monthlyTotalGasSpent = monthlyTotalGasSpent.reversed()
+                chartTitleLable.text = "Total Spent for Gas"
+                for i in 0...data.count - 1 {
+                    let dataEntry = BarChartDataEntry(x: Double(i), y: Double(monthlyTotalGasSpent[i]))
+                    dataEntries.append(dataEntry)
+                }
+                
+                let chartDataSet = BarChartDataSet(values: dataEntries, label: "Months")
+                let chartData = BarChartData(dataSet: chartDataSet)
+           
+                barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
+                barChart.data = chartData
+                
+            case .destinationCount:
+                
+                dataEntries.removeAll()
+                
+                chartTitleLable.text = "Destination Report"
+                barChart.data = nil
+            }
         }
-        
-        
-        
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Months")
-        let chartData = BarChartData(dataSet: chartDataSet)
         
         barChart.backgroundColor = .white
         barChart.xAxis.labelPosition = .bottom
-        barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
-        barChart.data = chartData
+
     }
     
     

@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		6320C22B22113CA800C784E0 /* ChartsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */; };
 		6333A1FD220E246200235EEC /* ChartsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333A1FC220E246200235EEC /* ChartsContentViewController.swift */; };
-		633A823A201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */; };
 		633B8275220BCE460076938C /* EntryHistoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8274220BCE460076938C /* EntryHistoryChartData.swift */; };
 		633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8276220CD7C10076938C /* ChartsViewController.swift */; };
 		634A8F05221236B60034E45F /* Mileage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 634A8F03221236B60034E45F /* Mileage.xcdatamodeld */; };
+		635EA910221385E000EF3962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635EA90F221385E000EF3962 /* Assets.xcassets */; };
+		635EA914221386D500EF3962 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EA913221386D500EF3962 /* OptionsTableViewController.swift */; };
 		636E4734220A23C0002E1717 /* gasPriceFormat+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4733220A23C0002E1717 /* gasPriceFormat+ext.swift */; };
 		6380BCD322021B5300C36D7F /* DateToString+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD222021B5300C36D7F /* DateToString+ext.swift */; };
 		6380BCD522021BC100C36D7F /* HideKeyboard+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD422021BC100C36D7F /* HideKeyboard+ext.swift */; };
@@ -50,10 +51,11 @@
 		52FD72FD663891C7F36C85A6 /* Pods-Mileage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage.debug.xcconfig"; path = "Target Support Files/Pods-Mileage/Pods-Mileage.debug.xcconfig"; sourceTree = "<group>"; };
 		6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPageViewController.swift; sourceTree = "<group>"; };
 		6333A1FC220E246200235EEC /* ChartsContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsContentViewController.swift; sourceTree = "<group>"; };
-		633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 20-36-01-240 13-22-41-051.xcassets"; sourceTree = "<group>"; };
 		633B8274220BCE460076938C /* EntryHistoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryHistoryChartData.swift; sourceTree = "<group>"; };
 		633B8276220CD7C10076938C /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		634A8F04221236B60034E45F /* Mileage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mileage.xcdatamodel; sourceTree = "<group>"; };
+		635EA90F221385E000EF3962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		635EA913221386D500EF3962 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
 		636E4733220A23C0002E1717 /* gasPriceFormat+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "gasPriceFormat+ext.swift"; sourceTree = "<group>"; };
 		6380BCD222021B5300C36D7F /* DateToString+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateToString+ext.swift"; sourceTree = "<group>"; };
 		6380BCD422021BC100C36D7F /* HideKeyboard+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HideKeyboard+ext.swift"; sourceTree = "<group>"; };
@@ -129,11 +131,12 @@
 		6380BCCE2201F94A00C36D7F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6333A1FC220E246200235EEC /* ChartsContentViewController.swift */,
 				63EF3D2722112BEA00DD19E4 /* EntriesTableViewController.swift */,
 				63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */,
+				6333A1FC220E246200235EEC /* ChartsContentViewController.swift */,
 				6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */,
 				633B8276220CD7C10076938C /* ChartsViewController.swift */,
+				635EA913221386D500EF3962 /* OptionsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,9 +181,9 @@
 				6380BCCD2201F93E00C36D7F /* View */,
 				6380BCCE2201F94A00C36D7F /* Controller */,
 				63D2CD161FDC8F4200EE64BE /* AppDelegate.swift */,
+				635EA90F221385E000EF3962 /* Assets.xcassets */,
 				634A8F03221236B60034E45F /* Mileage.xcdatamodeld */,
 				63D2CD251FDC8F4200EE64BE /* Info.plist */,
-				633A8239201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets */,
 			);
 			path = Mileage;
 			sourceTree = "<group>";
@@ -314,8 +317,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				633A823A201147CE001DB2B1 /* Assets 20-36-01-240 13-22-41-051.xcassets in Resources */,
 				63D2CD241FDC8F4200EE64BE /* LaunchScreen.storyboard in Resources */,
+				635EA910221385E000EF3962 /* Assets.xcassets in Resources */,
 				63EF3D262211225300DD19E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +403,7 @@
 				63D2CD171FDC8F4200EE64BE /* AppDelegate.swift in Sources */,
 				63CADE3D1FE38FB600875103 /* MileageEntry.swift in Sources */,
 				633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */,
+				635EA914221386D500EF3962 /* OptionsTableViewController.swift in Sources */,
 				6320C22B22113CA800C784E0 /* ChartsPageViewController.swift in Sources */,
 				636E4734220A23C0002E1717 /* gasPriceFormat+ext.swift in Sources */,
 				6380BCD322021B5300C36D7F /* DateToString+ext.swift in Sources */,

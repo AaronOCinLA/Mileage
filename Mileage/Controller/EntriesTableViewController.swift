@@ -15,12 +15,14 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
     var fetchResultController: NSFetchedResultsController<MileageEntryMO>!
     
     var deleteAllCoreData = false
+    var lastOdometerEntry = 0
     
     let maxMonths = 6
     var entry = MileageEntry()
     var dataArray = [EntryHistoryChartData]()
     var entryArray: [MileageEntryMO] = []  // Remove this
     var cityArray = [String]()
+    var newEntry: MileageEntryMO!
     
     // Core data
     var entries: [MileageEntryMO] = []
@@ -41,7 +43,7 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
     func fetchData() {
         
         let fetchRequest: NSFetchRequest<MileageEntryMO> = MileageEntryMO.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
@@ -53,7 +55,7 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
                 try fetchResultController.performFetch()
                 if let fetchedObjects = fetchResultController.fetchedObjects {
                     entries = fetchedObjects
-                    print("Number of entries: \(entries.count)")
+                    lastOdometerEntry = Int(entries[0].odometer)
                 }
             } catch {
                 print(error)
@@ -154,7 +156,6 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
         if let cellDate = entries[indexPath.row].date {
             cell.lblDate.text = "Date: " + cellDate.dateToString
         }
-        //        cell.lblDate.text = "Date: " + entryArray[indexPath.row].date.dateToString
         cell.lblSMileage.text = "Start: " + String(entries[indexPath.row].odometer-43)
         cell.lblEMileage.text = " End: " + String(entries[indexPath.row].odometer)
         cell.lblTMileage.text = "Total Miles: 43"
@@ -198,7 +199,7 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler)
             in
             
-            let activityController: UIActivityViewController
+//            let activityController: UIActivityViewController
             
             completionHandler(true)
         }
@@ -219,10 +220,16 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
         } else if segue.identifier == "addNewEntrySegue" {
             let destinationController = segue.destination as! EntryDetialTableViewController
             destinationController.hidesBottomBarWhenPushed = true
+            
+            destinationController.lastOdomterEntry = self.lastOdometerEntry
+            // Get most recent odometer entry
+            
         }
     }
     
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+        print("Unwinding ... ")
+
         dismiss(animated: true, completion: nil)
     }
     
