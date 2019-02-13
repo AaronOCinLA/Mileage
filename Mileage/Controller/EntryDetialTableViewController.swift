@@ -15,22 +15,13 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     let userDefault = UserDefaults.standard
     var entry: MileageEntryMO!
     var selectedGasPrice = 0.0
-    var selectedDestination = ""
-    
-    
-    var cityArray = [String]()
     
     var lastEnteredGasPrice = 0.0
     var gasPriceArray = [Double]()
     
     enum sectionName: Int {
-        case date, gas, odometer, destination, entryPreview
+        case date, gas, odometer, entryPreview
     }
-    
-    enum uiPicker: Int {
-        case gallonPrice, destination
-    }
-    
     
     var today = Date()
     var newDate = Date()
@@ -44,12 +35,10 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     @IBOutlet weak var totalSaleTextField: UITextField!
     
     @IBOutlet weak var previewDateLabel: UILabel!
-    @IBOutlet weak var previewDestinationLabel: UILabel!
     @IBOutlet weak var previewTotalSale: UILabel!
     @IBOutlet weak var previewPricePerGallon: UILabel!
     
     @IBOutlet weak var updateGasPrice: UIPickerView!
-    @IBOutlet weak var updateDestination: UIPickerView!
     
     @IBOutlet weak var submitButton: UIButton! {
         didSet {
@@ -65,12 +54,12 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         newDate = today.addingTimeInterval(dateStepper.value * secondsPerDay)
         updateLabels()
     }
-
+    
     
     
     @IBAction func updateOdometer(_ sender: Any) {
         
-
+        
         // Check if valid
         if let odometer = odometerTextField.text {
             if (Int(odometer)! < lastOdomterEntry) {
@@ -105,9 +94,8 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         if let lastOdometerEntry = userDefault.value(forKey: "odometer") {
             odometerTextField.text = lastOdometerEntry as? String
         }
-            
+        
         // Load cached gas price
-        cityArray = loadCityArray()
         if let cachedGasPrice = userDefault.value(forKey: "lastGasPrice") {
             lastEnteredGasPrice = cachedGasPrice as? Double ?? 3.749
         } else {
@@ -122,26 +110,14 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         
         updateLabels()
         
-        self.updateDestination.delegate = self
-        self.updateDestination.dataSource = self
-        
         self.updateGasPrice.delegate = self
         self.updateGasPrice.dataSource = self
     }
     
-    
-    func loadCityArray() -> [String] {
-        if let constantName = userDefault.value(forKey: "cityArray") {
-            return constantName as! [String]
-        } else { return [String]() }
-    }
-    
-    
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -169,46 +145,20 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        if let pickerViewSelection = uiPicker(rawValue: pickerView.tag) {
-            switch pickerViewSelection {
-            case .destination:
-                return cityArray.count
-            case .gallonPrice:
-                return gasPriceArray.count
-            }
-        } else {
-            return 0
-        }
+        return gasPriceArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        if let pickerViewSelection = uiPicker(rawValue: pickerView.tag) {
-            switch pickerViewSelection {
-            case .destination:
-//                entry.destination = cityArray[row]
-                return cityArray[row]
-            case .gallonPrice:
-//                entry.pricePerGallon = Double(gasPriceArray[row].gasPriceFormat())!
-                return String(gasPriceArray[row].gasPriceFormat())
-            }
-        } else {
-            return nil
-        }
+    
+        //  entry.pricePerGallon = Double(gasPriceArray[row].gasPriceFormat())!
+        return String(gasPriceArray[row].gasPriceFormat())
+
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if let pickerViewSelection  = uiPicker(rawValue: pickerView.tag) {
-            switch pickerViewSelection {
-            case .destination:
-                selectedDestination = cityArray[row]
-            case .gallonPrice:
-                selectedGasPrice = gasPriceArray[row]
-                previewPricePerGallon.text = "$" + String(gasPriceArray[row].gasPriceFormat())
-            }
-        }
+        selectedGasPrice = gasPriceArray[row]
+        previewPricePerGallon.text = "$" + String(gasPriceArray[row].gasPriceFormat())
     }
     
     // MARK: - Navigations/Submit New Entry
@@ -226,8 +176,6 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
                 entry.odometer = Int16(odmeterReading)!
                 userDefault.set(entry.pricePerGallon, forKey: "lastGasPrice")
             }
-            entry.destination = selectedDestination
-            
             
             appDelegate.saveContext()
         }
@@ -235,6 +183,6 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         
         dismiss(animated: true, completion: nil)
     }
-   
+    
     
 }

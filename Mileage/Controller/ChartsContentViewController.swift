@@ -96,7 +96,6 @@ class ChartsContentViewController: UIViewController, NSFetchedResultsControllerD
                 monthlyTotalGasSpent.append(tlGas)
             }
             let tlMiles = data[i].getTotalMilesForMonth()
-            let destArr = data[i].getDestinationVisitCount()
             numMiles.append(tlMiles)
         }
     }
@@ -169,9 +168,6 @@ class ChartsContentViewController: UIViewController, NSFetchedResultsControllerD
             data[c].odometerEntries.append(Int(entries[i].odometer))
             if let daTotalGas = data[c].totalGas {
                 data[c].totalGas = daTotalGas + entries[i].totalSale
-            }
-            if (entries[i].destination != "") {
-                data[c].destinationArray?.append(entries[i].destination!)
             }
         }
     }

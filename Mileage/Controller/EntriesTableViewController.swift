@@ -21,7 +21,6 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
     var entry = MileageEntry()
     var dataArray = [EntryHistoryChartData]()
     var entryArray: [MileageEntryMO] = []  // Remove this
-    var cityArray = [String]()
     var newEntry: MileageEntryMO!
     
     // Core data
@@ -32,9 +31,8 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //
-        cityArray = loadCityArray()
-//        createTestArray() // TODO: Delete
+        
+//     createTestArray() // TODO: Delete
         fetchData()
     }
     
@@ -63,12 +61,6 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
         }
     }
     
-    func loadCityArray() -> [String] {
-        if let constantName = userDefault.value(forKey: "cityArray") {
-            return constantName as! [String]
-        } else { return [String]() }
-    }
-    
     func deleteCoreData() {
         print("delete Core Data")
     }
@@ -81,11 +73,6 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
             var testDate = Date()
             let testOdometer = 24601
             
-            var tempCityName = ""
-            
-            if (cityArray.count > 0)  {
-                tempCityName = cityArray[i%cityArray.count]
-            }
             
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
                 
@@ -95,7 +82,6 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
                 entryMO.date = testDate
                 entryMO.odometer = Int16(testOdometer - i*43)
                 entryMO.totalSale = 21.32
-                entryMO.destination = tempCityName
                 
                 appDelegate.saveContext()
             }
@@ -159,10 +145,6 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
         cell.lblSMileage.text = "Start: " + String(entries[indexPath.row].odometer-43)
         cell.lblEMileage.text = " End: " + String(entries[indexPath.row].odometer)
         cell.lblTMileage.text = "Total Miles: 43"
-        cell.lblDestination.text = "Destination:"
-        if let destination = entries[indexPath.row].destination {
-            cell.lblDestination.text = "Destination: \(destination)"
-        }
         cell.lbltSale.text = "$" + entries[indexPath.row].totalSale.gasPriceFormat()
         cell.lblMpg.text = "$" + entries[indexPath.row].pricePerGallon.gasPriceFormat()
         
