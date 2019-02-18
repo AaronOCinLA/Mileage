@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6320C22B22113CA800C784E0 /* ChartsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */; };
 		6333A1FD220E246200235EEC /* ChartsContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333A1FC220E246200235EEC /* ChartsContentViewController.swift */; };
 		633B8275220BCE460076938C /* EntryHistoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8274220BCE460076938C /* EntryHistoryChartData.swift */; };
 		633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B8276220CD7C10076938C /* ChartsViewController.swift */; };
 		634A8F05221236B60034E45F /* Mileage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 634A8F03221236B60034E45F /* Mileage.xcdatamodeld */; };
-		635EA910221385E000EF3962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635EA90F221385E000EF3962 /* Assets.xcassets */; };
 		635EA914221386D500EF3962 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EA913221386D500EF3962 /* OptionsTableViewController.swift */; };
 		636E4734220A23C0002E1717 /* gasPriceFormat+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4733220A23C0002E1717 /* gasPriceFormat+ext.swift */; };
 		6380BCD322021B5300C36D7F /* DateToString+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD222021B5300C36D7F /* DateToString+ext.swift */; };
 		6380BCD522021BC100C36D7F /* HideKeyboard+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD422021BC100C36D7F /* HideKeyboard+ext.swift */; };
 		6380BCD7220221D700C36D7F /* Image_Alpha-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD6220221D700C36D7F /* Image_Alpha-ext.swift */; };
 		6380BCD92202544300C36D7F /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380BCD82202544300C36D7F /* Destination.swift */; };
+		6396D2182219E9380080FFA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6396D2172219E9380080FFA6 /* Assets.xcassets */; };
 		63A22D881FE9FDEF00C131DC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A22D871FE9FDEF00C131DC /* CustomTableViewCell.swift */; };
+		63AAB752221B68D000667192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AAB751221B68D000667192 /* Main.storyboard */; };
+		63AAB754221B6C8F00667192 /* OptionPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AAB753221B6C8F00667192 /* OptionPreferencesViewController.swift */; };
 		63CADE3D1FE38FB600875103 /* MileageEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CADE3C1FE38FB600875103 /* MileageEntry.swift */; };
 		63D2CD171FDC8F4200EE64BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2CD161FDC8F4200EE64BE /* AppDelegate.swift */; };
 		63D2CD241FDC8F4200EE64BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D2CD221FDC8F4200EE64BE /* LaunchScreen.storyboard */; };
-		63EF3D262211225300DD19E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF3D252211225300DD19E4 /* Main.storyboard */; };
 		63EF3D2822112BEA00DD19E4 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF3D2722112BEA00DD19E4 /* EntriesTableViewController.swift */; };
 		63FBA40F2208FE98000BA8E4 /* EntryDetialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */; };
 		B5E0B6FB52C5B89CA090CADF /* Pods_Mileage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1875BB2EF3790A4102630BE /* Pods_Mileage.framework */; };
@@ -49,19 +49,20 @@
 /* Begin PBXFileReference section */
 		0027D18F6D717ED8BE1D5447 /* Pods-Mileage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage.release.xcconfig"; path = "Target Support Files/Pods-Mileage/Pods-Mileage.release.xcconfig"; sourceTree = "<group>"; };
 		52FD72FD663891C7F36C85A6 /* Pods-Mileage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage.debug.xcconfig"; path = "Target Support Files/Pods-Mileage/Pods-Mileage.debug.xcconfig"; sourceTree = "<group>"; };
-		6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPageViewController.swift; sourceTree = "<group>"; };
 		6333A1FC220E246200235EEC /* ChartsContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsContentViewController.swift; sourceTree = "<group>"; };
 		633B8274220BCE460076938C /* EntryHistoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryHistoryChartData.swift; sourceTree = "<group>"; };
 		633B8276220CD7C10076938C /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		634A8F04221236B60034E45F /* Mileage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mileage.xcdatamodel; sourceTree = "<group>"; };
-		635EA90F221385E000EF3962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		635EA913221386D500EF3962 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
 		636E4733220A23C0002E1717 /* gasPriceFormat+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "gasPriceFormat+ext.swift"; sourceTree = "<group>"; };
 		6380BCD222021B5300C36D7F /* DateToString+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateToString+ext.swift"; sourceTree = "<group>"; };
 		6380BCD422021BC100C36D7F /* HideKeyboard+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HideKeyboard+ext.swift"; sourceTree = "<group>"; };
 		6380BCD6220221D700C36D7F /* Image_Alpha-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image_Alpha-ext.swift"; sourceTree = "<group>"; };
 		6380BCD82202544300C36D7F /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		6396D2172219E9380080FFA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63A22D871FE9FDEF00C131DC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		63AAB751221B68D000667192 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		63AAB753221B6C8F00667192 /* OptionPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionPreferencesViewController.swift; sourceTree = "<group>"; };
 		63CADE3C1FE38FB600875103 /* MileageEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageEntry.swift; sourceTree = "<group>"; };
 		63D2CD131FDC8F4200EE64BE /* Mileage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mileage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D2CD161FDC8F4200EE64BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		63D2CD251FDC8F4200EE64BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D2CD2A1FDC8F4200EE64BE /* MileageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MileageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D2CD351FDC8F4200EE64BE /* MileageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MileageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63EF3D252211225300DD19E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		63EF3D2722112BEA00DD19E4 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetialTableViewController.swift; sourceTree = "<group>"; };
 		E1875BB2EF3790A4102630BE /* Pods_Mileage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +114,7 @@
 		6380BCCC2201F92F00C36D7F /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				63EF3D252211225300DD19E4 /* Main.storyboard */,
+				63AAB751221B68D000667192 /* Main.storyboard */,
 				63D2CD221FDC8F4200EE64BE /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -134,9 +134,9 @@
 				63EF3D2722112BEA00DD19E4 /* EntriesTableViewController.swift */,
 				63FBA40E2208FE98000BA8E4 /* EntryDetialTableViewController.swift */,
 				6333A1FC220E246200235EEC /* ChartsContentViewController.swift */,
-				6320C22A22113CA800C784E0 /* ChartsPageViewController.swift */,
 				633B8276220CD7C10076938C /* ChartsViewController.swift */,
 				635EA913221386D500EF3962 /* OptionsTableViewController.swift */,
+				63AAB753221B6C8F00667192 /* OptionPreferencesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 				6380BCCD2201F93E00C36D7F /* View */,
 				6380BCCE2201F94A00C36D7F /* Controller */,
 				63D2CD161FDC8F4200EE64BE /* AppDelegate.swift */,
-				635EA90F221385E000EF3962 /* Assets.xcassets */,
+				6396D2172219E9380080FFA6 /* Assets.xcassets */,
 				634A8F03221236B60034E45F /* Mileage.xcdatamodeld */,
 				63D2CD251FDC8F4200EE64BE /* Info.plist */,
 			);
@@ -318,8 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				63D2CD241FDC8F4200EE64BE /* LaunchScreen.storyboard in Resources */,
-				635EA910221385E000EF3962 /* Assets.xcassets in Resources */,
-				63EF3D262211225300DD19E4 /* Main.storyboard in Resources */,
+				63AAB752221B68D000667192 /* Main.storyboard in Resources */,
+				6396D2182219E9380080FFA6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,10 +401,10 @@
 				634A8F05221236B60034E45F /* Mileage.xcdatamodeld in Sources */,
 				63EF3D2822112BEA00DD19E4 /* EntriesTableViewController.swift in Sources */,
 				63D2CD171FDC8F4200EE64BE /* AppDelegate.swift in Sources */,
+				63AAB754221B6C8F00667192 /* OptionPreferencesViewController.swift in Sources */,
 				63CADE3D1FE38FB600875103 /* MileageEntry.swift in Sources */,
 				633B8277220CD7C10076938C /* ChartsViewController.swift in Sources */,
 				635EA914221386D500EF3962 /* OptionsTableViewController.swift in Sources */,
-				6320C22B22113CA800C784E0 /* ChartsPageViewController.swift in Sources */,
 				636E4734220A23C0002E1717 /* gasPriceFormat+ext.swift in Sources */,
 				6380BCD322021B5300C36D7F /* DateToString+ext.swift in Sources */,
 			);

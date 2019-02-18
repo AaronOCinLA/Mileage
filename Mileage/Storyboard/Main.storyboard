@@ -56,22 +56,22 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zkM-xn-Vee" userLabel="Right Stack View">
-                                            <rect key="frame" x="273" y="17" width="96" height="86"/>
+                                            <rect key="frame" x="285.5" y="17" width="83.5" height="86"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Destination: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNc-Yf-Ea8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Notes: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNc-Yf-Ea8" userLabel="Notes: ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="83.5" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Total Sale: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5B-rf-GOL">
-                                                    <rect key="frame" x="0.0" y="35" width="96" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="35" width="83.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost/gal: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2U-dV-oRQ">
-                                                    <rect key="frame" x="0.0" y="65.5" width="96" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="65.5" width="83.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0mU-1n-jrT">
                             <color key="tintColor" red="0.67517596479999997" green="0.17651334399999999" blue="0.1711528897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="YJm-WH-jce" kind="show" identifier="addNewEntrySegue" id="BEU-af-8aI"/>
+                                <segue destination="YJm-WH-jce" kind="show" id="gL8-bX-T3r"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -282,7 +282,7 @@
                                                 <constraint firstItem="694-qt-Rvx" firstAttribute="centerX" secondItem="OYu-t0-rbv" secondAttribute="centerX" id="uZ4-sY-Q6b"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -385,8 +385,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="clickSubmit:" destination="YJm-WH-jce" eventType="touchUpInside" id="2Sd-Hp-Vqt"/>
-                                                        <segue destination="9bd-o0-59y" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="drF-Xa-EAH"/>
+                                                        <action selector="clickSubmitWithSender:" destination="YJm-WH-jce" eventType="touchUpInside" id="4X8-Ga-Pgs"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -404,9 +403,12 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="kiw-F9-Gyr"/>
                     <navigationItem key="navigationItem" title="Enter Mileage" id="J6X-eC-hA3">
-                        <barButtonItem key="rightBarButtonItem" title="More" id="Z16-oc-iCu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Z16-oc-iCu" userLabel="Cancel">
+                            <connections>
+                                <segue destination="CEl-xn-u89" kind="unwind" identifier="unwindHome" unwindAction="unwindToHomeWithSegue:" id="Vaz-IB-lLM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="867"/>
                     <connections>
@@ -422,9 +424,9 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtp-gv-S3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="9bd-o0-59y" userLabel="Exit" sceneMemberID="exit"/>
+                <exit id="CEl-xn-u89" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="8160.8000000000002" y="124.13793103448276"/>
+            <point key="canvasLocation" x="8175" y="182"/>
         </scene>
         <!--Options-->
         <scene sceneID="DoI-CC-IOl">
@@ -443,6 +445,16 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kni-eD-tYc" id="XzX-Fn-8fa">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCs-aU-g3y">
+                                                    <rect key="frame" x="140" y="6" width="94" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Email All Data"/>
+                                                    <connections>
+                                                        <action selector="didTapEmailDataWithSender:" destination="5ry-zb-4Uf" eventType="touchUpInside" id="EpD-1D-GWX"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -455,6 +467,16 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QJj-Np-M3h" id="KRz-ln-hLK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvu-C3-Zkx">
+                                                    <rect key="frame" x="131" y="6" width="113" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Edit Preferences"/>
+                                                    <connections>
+                                                        <segue destination="j33-Y0-XBD" kind="show" id="FgY-ZW-O4C"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -467,6 +489,16 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FN4-4N-kq7" id="fN4-an-Os5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrr-mA-4sq">
+                                                    <rect key="frame" x="168" y="6" width="39" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Reset"/>
+                                                    <connections>
+                                                        <action selector="didTapResetWithSender:" destination="5ry-zb-4Uf" eventType="touchUpInside" id="9RV-pN-Lgh"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -483,11 +515,103 @@
             </objects>
             <point key="canvasLocation" x="7116" y="1051"/>
         </scene>
+        <!--Edit Preferences-->
+        <scene sceneID="hP6-SH-Ydh">
+            <objects>
+                <viewController id="j33-Y0-XBD" customClass="OptionPreferencesViewController" customModule="Mileage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1p8-lX-Va5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="uoE-Mq-pM0">
+                                <rect key="frame" x="67.5" y="290" width="240" height="87"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="uwL-fY-Gyq">
+                                        <rect key="frame" x="0.0" y="0.0" width="148" height="87"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Track Tire Changes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea0-A0-bB5">
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="41.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Oil Changes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkA-cN-wvc">
+                                                <rect key="frame" x="0.0" y="66.5" width="148" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="2nw-eD-uco">
+                                        <rect key="frame" x="191" y="0.0" width="49" height="87"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvR-bt-GAI">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="didUpdateTiresSwitch:" destination="j33-Y0-XBD" eventType="valueChanged" id="yYt-qt-Gwd"/>
+                                                </connections>
+                                            </switch>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7P-cE-k3S">
+                                                <rect key="frame" x="0.0" y="56" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="didUPdateOilChangeSwitch:" destination="j33-Y0-XBD" eventType="valueChanged" id="kkK-HZ-u9n"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-84-bLB">
+                                <rect key="frame" x="60.5" y="407" width="254.5" height="58.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report History Length: 6 Months" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exf-na-DSM">
+                                        <rect key="frame" x="2" y="0.0" width="250.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="3" maxValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="yPK-tk-mQi">
+                                        <rect key="frame" x="-2" y="28.5" width="258.5" height="31"/>
+                                        <connections>
+                                            <action selector="didUpdateReportHistoryLengthSlider:" destination="j33-Y0-XBD" eventType="valueChanged" id="pgC-4D-af6"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yPK-tk-mQi" firstAttribute="leading" secondItem="1ag-84-bLB" secondAttribute="leading" id="Tnd-xk-p57"/>
+                                    <constraint firstAttribute="trailing" secondItem="yPK-tk-mQi" secondAttribute="trailing" id="V8E-YF-xfx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uoE-Mq-pM0" firstAttribute="centerX" secondItem="1p8-lX-Va5" secondAttribute="centerX" id="QgC-gx-dKq"/>
+                            <constraint firstItem="1ag-84-bLB" firstAttribute="centerX" secondItem="1p8-lX-Va5" secondAttribute="centerX" id="euJ-hv-x75"/>
+                            <constraint firstItem="1ag-84-bLB" firstAttribute="top" secondItem="uoE-Mq-pM0" secondAttribute="bottom" constant="30" id="tZM-gm-dS0"/>
+                            <constraint firstItem="uoE-Mq-pM0" firstAttribute="centerY" secondItem="1p8-lX-Va5" secondAttribute="centerY" id="zgM-w0-1sd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Uh-EK-fn4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Preferences" id="U2R-zo-Jac">
+                        <barButtonItem key="backBarButtonItem" title="Back" image="about" id="PJv-dN-45F"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="oilSwitch" destination="G7P-cE-k3S" id="Tjp-Uu-B5N"/>
+                        <outlet property="reportHistoryLenghtLabel" destination="exf-na-DSM" id="93T-Vp-xCE"/>
+                        <outlet property="reportHistoryLenghtSlider" destination="yPK-tk-mQi" id="Qdg-L7-FBZ"/>
+                        <outlet property="tiresSwitch" destination="dvR-bt-GAI" id="T2G-vJ-xBp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLQ-J7-n7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7942" y="1135"/>
+        </scene>
         <!--Options-->
         <scene sceneID="6VB-ny-bVK">
             <objects>
                 <navigationController id="SaM-fi-3K2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Options" id="p1b-Gn-HOx"/>
+                    <tabBarItem key="tabBarItem" title="Options" image="optionsIcon" id="p1b-Gn-HOx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5dm-f7-Qvx">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -601,7 +725,7 @@
         <scene sceneID="nYG-rH-qfB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KxS-og-Ead" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="homeIconTab" id="Tgi-rd-VUj"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="Tgi-rd-VUj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EgT-9B-t6u">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -638,8 +762,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about" width="23" height="21"/>
         <image name="chartsIcon" width="23" height="21"/>
         <image name="gasPump" width="256" height="256"/>
-        <image name="homeIconTab" width="23" height="21"/>
+        <image name="homeIcon" width="33" height="33"/>
+        <image name="optionsIcon" width="33" height="33"/>
     </resources>
 </document>

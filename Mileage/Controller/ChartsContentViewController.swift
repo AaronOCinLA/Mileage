@@ -13,7 +13,7 @@ import CoreData
 class ChartsContentViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     enum reportType: Int {
-        case miles, gasSpent, destinationCount
+        case miles, gasSpent
     }
     var index = 0
     
@@ -60,7 +60,7 @@ class ChartsContentViewController: UIViewController, NSFetchedResultsControllerD
     
     @IBAction func didTapNext(sender: UIButton) {
 
-        index = (index + 1)%3
+        index = (index + 1)%2
         setChart()
         self.viewDidLoad()
     }
@@ -140,13 +140,6 @@ class ChartsContentViewController: UIViewController, NSFetchedResultsControllerD
            
                 barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
                 barChart.data = chartData
-                
-            case .destinationCount:
-                
-                dataEntries.removeAll()
-                
-                chartTitleLable.text = "Destination Report"
-                barChart.data = nil
             }
         }
         

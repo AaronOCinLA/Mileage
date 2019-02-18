@@ -28,24 +28,6 @@ class ChartsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-//        max = data.count - 1
-//        
-//        loadMonthArray()
-//        
-//        var tempString = ""
-//        for i in 0...max {
-//            let tlGas = data[i].totalGas!.gasPriceFormat()
-//            let tlMiles = data[i].getTotalMilesForMonth()
-//            let destArr = data[i].getDestinationVisitCount()
-//            numMiles.append(tlMiles)
-//            tempString.append("Month \(i) \nTotal gas: \(tlGas), \nTotal miles: \(tlMiles)), \nCities: \(destArr)\n\n")
-//        }
-//        testTextView.text = tempString
-//        
-//        
-////        barChart.chartDescription?.text = ""
-//        barChart.noDataText = "No Data to show yet"
-//        setChart()
     }
     
     func loadMonthArray() {

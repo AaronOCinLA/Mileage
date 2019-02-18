@@ -17,6 +17,7 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     var selectedGasPrice = 0.0
     
     var lastEnteredGasPrice = 0.0
+    
     var gasPriceArray = [Double]()
     
     enum sectionName: Int {
@@ -25,7 +26,7 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     
     var today = Date()
     var newDate = Date()
-    var lastOdomterEntry = 30127
+//    var lastOdomterEntry = 30127
     
     @IBOutlet weak var dateStepper: UIStepper!
     @IBOutlet weak var dateLabel: UILabel!
@@ -62,9 +63,9 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
         
         // Check if valid
         if let odometer = odometerTextField.text {
-            if (Int(odometer)! < lastOdomterEntry) {
-                print("Error: odometer entry must be greater than \(lastOdomterEntry)")
-            }
+//            if (Int(odometer)! < lastOdomterEntry) {
+//                print("Error: odometer entry must be greater than \(lastOdomterEntry)")
+//            }
         }
     }
     
@@ -76,7 +77,9 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     func updateLabels() {
         dateLabel.text = newDate.dateToString
         previewDateLabel.text = newDate.dateToString
-        odometerTextField.placeholder = String(lastOdomterEntry)
+        if let lastOdometerEntry = userDefault.value(forKey: "odometer") {
+            odometerTextField.placeholder = String(lastOdometerEntry as! Int16)
+        }
     }
     
     // MARK: - Viewcontrol Life cycle
@@ -88,7 +91,7 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userDefault.set(24601, forKey: "odometer")
+        // userDefault.set(24601, forKey: "odometer")
         
         
         if let lastOdometerEntry = userDefault.value(forKey: "odometer") {
@@ -149,10 +152,10 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    
+        
         //  entry.pricePerGallon = Double(gasPriceArray[row].gasPriceFormat())!
         return String(gasPriceArray[row].gasPriceFormat())
-
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -163,23 +166,90 @@ class EntryDetialTableViewController: UITableViewController, UIPickerViewDelegat
     
     // MARK: - Navigations/Submit New Entry
     
-    @IBAction func clickSubmit(_ sender: Any) {
+    
+    @IBAction func clickSubmit(sender: AnyObject) {
         
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            entry = MileageEntryMO(context: appDelegate.persistentContainer.viewContext)
-            entry.date = Date()
-            entry.pricePerGallon = selectedGasPrice
-            if let amount = totalSaleTextField.text {
-                entry.totalSale = Double(amount)!
+        // Error check
+        var odom = Int16(0)
+        let lastEntry = userDefault.value(forKey: "odometer") as! Int16
+        if let odometerText = odometerTextField.text {
+            if let odometerInt = Int16(odometerText) {
+                odom = odometerInt
+            } else {
+                print("Must be number.")
             }
-            if let odmeterReading = odometerTextField.text {
-                entry.odometer = Int16(odmeterReading)!
-                userDefault.set(entry.pricePerGallon, forKey: "lastGasPrice")
+        }
+        if (odom < lastEntry) {
+            
+            let alertController = UIAlertController(title: "Odometer Entry Error", message: "The odometer entry must be a valid number, greater than \(lastEntry)", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            present(alertController, animated: true)
+            
+            return
+        } else {
+            // Save entry and return to main VC
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                
+                var entryMO: MileageEntryMO!
+                entryMO = MileageEntryMO(context: appDelegate.persistentContainer.viewContext)
+                entryMO.date = Date() // update this to match label
+                entryMO.startOdometer = lastEntry
+                entryMO.odometer = odom
+                if let totalSaleDouble = totalSaleTextField.text {
+                    entryMO.totalSale = Double(totalSaleDouble)!
+                }
+                entryMO.note = ""
+                
+                appDelegate.saveContext()
+                
+                // Segue unwind
+                performSegue(withIdentifier: "unwindHome", sender: nil)
+                
             }
             
-            appDelegate.saveContext()
         }
         
+        
+//        if (odometerTextField.text == "1") {
+//
+//            let alertController = UIAlertController(title: "Odometer Entry Error", message: "The odometer entry must be a valud number", preferredStyle: .alert)
+//            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alertController.addAction(alertAction)
+//            present(alertController, animated: true)
+//
+//            return
+//        }
+        
+//        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//            entry = MileageEntryMO(context: appDelegate.persistentContainer.viewContext)
+//            entry.date = Date()
+//            entry.pricePerGallon = selectedGasPrice
+//            if let amount = totalSaleTextField.text {
+//                entry.totalSale = Double(amount)!
+//            }
+//            if let odmeterReading = odometerTextField.text {
+//                entry.odometer = Int16(odmeterReading)!
+//                userDefault.set(entry.pricePerGallon, forKey: "lastGasPrice")
+//            }
+//
+//            appDelegate.saveContext()
+//        }
+        dismiss(animated: true, completion: nil)
+//        self.performSegue(withIdentifier: "returnToHome", sender:)
+    }
+    
+    
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+        
+//        if odometerTextField.text == "1" {
+//            let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: .alert)
+//            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alertController.addAction(alertAction)
+//            present(alertController, animated: true, completion: nil)
+//            
+//            return
+//        }
         
         dismiss(animated: true, completion: nil)
     }

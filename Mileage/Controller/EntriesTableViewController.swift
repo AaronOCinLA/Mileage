@@ -14,7 +14,6 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
     let userDefault = UserDefaults.standard
     var fetchResultController: NSFetchedResultsController<MileageEntryMO>!
     
-    var deleteAllCoreData = false
     var lastOdometerEntry = 0
     
     let maxMonths = 6
@@ -32,7 +31,7 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
         super.viewDidLoad()
         
         
-//     createTestArray() // TODO: Delete
+        //             createTestArray() // TODO: Delete
         fetchData()
     }
     
@@ -53,16 +52,12 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
                 try fetchResultController.performFetch()
                 if let fetchedObjects = fetchResultController.fetchedObjects {
                     entries = fetchedObjects
-                    lastOdometerEntry = Int(entries[0].odometer)
+                    userDefault.set(Int(entries[0].odometer), forKey: "odometer")
                 }
             } catch {
                 print(error)
             }
         }
-    }
-    
-    func deleteCoreData() {
-        print("delete Core Data")
     }
     
     // TODO: Remove this test data generator
@@ -80,8 +75,10 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
                 
                 entryMO = MileageEntryMO(context: appDelegate.persistentContainer.viewContext)
                 entryMO.date = testDate
-                entryMO.odometer = Int16(testOdometer - i*43)
+                entryMO.startOdometer = Int16(testOdometer - i*43)
+                entryMO.odometer = entryMO.startOdometer + 43
                 entryMO.totalSale = 21.32
+                entryMO.note = ""
                 
                 appDelegate.saveContext()
             }
@@ -104,6 +101,7 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
         case .delete:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                self.entries[indexPath.row-1].startOdometer = self.entries[indexPath.row+1].odometer
             }
         case .update:
             if let indexPath = indexPath {
@@ -137,28 +135,19 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
         let cellIdentifier = "entryCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomTableViewCell
         
+        
         // Configure the cell...
         cell.lblDate.text = "Date: "
         if let cellDate = entries[indexPath.row].date {
             cell.lblDate.text = "Date: " + cellDate.dateToString
         }
-        cell.lblSMileage.text = "Start: " + String(entries[indexPath.row].odometer-43)
+        cell.lblSMileage.text = "Start: " + String(entries[indexPath.row].startOdometer)
         cell.lblEMileage.text = " End: " + String(entries[indexPath.row].odometer)
-        cell.lblTMileage.text = "Total Miles: 43"
+        cell.lblTMileage.text = "Total Miles: \(entries[indexPath.row].odometer - entries[indexPath.row].startOdometer)"
         cell.lbltSale.text = "$" + entries[indexPath.row].totalSale.gasPriceFormat()
         cell.lblMpg.text = "$" + entries[indexPath.row].pricePerGallon.gasPriceFormat()
         
         //        cell.imageGas.image = UIImage(named: "gasTank")
-        
-        if (deleteAllCoreData) {
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                let context = appDelegate.persistentContainer.viewContext
-                let entryToDelete = self.fetchResultController.object(at: indexPath)
-                context.delete(entryToDelete)
-                
-                appDelegate.saveContext()
-            }
-        }
         
         return cell
     }
@@ -166,29 +155,41 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
             
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
                 let context = appDelegate.persistentContainer.viewContext
                 let entryToDelete = self.fetchResultController.object(at: indexPath)
-                context.delete(entryToDelete)
                 
-                appDelegate.saveContext()
+                
+                if (indexPath.row == 0) {
+                    print("Error: cannot delete top row")
+                    tableView.reloadData()
+                }
+                else if indexPath.row == self.entries.count - 1 {
+                    print("Error: cannot delete bottom row")
+                    tableView.reloadData()
+                }
+                else {
+                    context.delete(entryToDelete)
+                    appDelegate.saveContext()
+                    //                    tableView.reloadData()
+                }
             }
+            
             completionHandler(true)
         }
         
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler)
             in
             
-//            let activityController: UIActivityViewController
+            //            let activityController: UIActivityViewController
             
             completionHandler(true)
         }
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
-        
-        
         
         return swipeConfiguration
     }
@@ -197,21 +198,19 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sendDataToChartsSegue" {
             let destinationController = segue.destination as! ChartsViewController
-            //            getMileageHistory()
             destinationController.data = dataArray
         } else if segue.identifier == "addNewEntrySegue" {
             let destinationController = segue.destination as! EntryDetialTableViewController
             destinationController.hidesBottomBarWhenPushed = true
             
-            destinationController.lastOdomterEntry = self.lastOdometerEntry
+            //            destinationController.lastOdomterEntry = self.lastOdometerEntry
             // Get most recent odometer entry
             
         }
     }
     
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {
-        print("Unwinding ... ")
-
+        
         dismiss(animated: true, completion: nil)
     }
     
